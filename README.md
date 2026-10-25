@@ -52,6 +52,8 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 
 **SQL techniques:** `COUNT()`, `GROUP BY`, `ORDER BY`
 
+![Invoice Distribution by Country](screenshots/invoice_counts_by_country.png)
+
 **Business interpretation:** Invoice counts help identify markets with high transaction volumes. Revenue and average invoice value should also be analysed before deciding which markets are commercially most important.
 
 ### 2. Billing City with the Highest Invoice Value
@@ -59,6 +61,8 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 **Finding:** Prague recorded the highest total invoice value, approximately 273.24 in the dataset's currency units.
 
 **SQL techniques:** `SUM()`, `GROUP BY`, `ORDER BY`, `LIMIT`
+
+![Highest Invoice Value by City](screenshots/highest_revenue_city.png)
 
 **Business interpretation:** This identifies a billing city with a high cumulative invoice value. Further analysis of customer demand, costs, and location suitability would be needed before using this result to make an event or marketing decision.
 
@@ -68,6 +72,8 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 
 **SQL techniques:** `JOIN`, `SUM()`, `GROUP BY`, `ORDER BY`
 
+![Highest-Spending Customer](screenshots/top_spending_customer.png)
+
 **Business interpretation:** Understanding the purchasing patterns of high-spending customers could help identify opportunities for customer engagement and targeted promotions.
 
 ### 4. Artists with the Largest Rock Track Catalogues
@@ -76,7 +82,10 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 
 **SQL techniques:** Multiple-table `JOIN`s, `WHERE`, `COUNT()`, `GROUP BY`, `ORDER BY`
 
+![Top Rock Artists](screenshots/top_rock_artists.png)
+
 **Business interpretation:** Track counts help compare the size of artists' Rock catalogues. They should not be interpreted as direct measures of sales, listening activity, or customer popularity.
+
 
 ### 5. Most Popular Genre by Country
 
@@ -84,7 +93,10 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 
 **SQL techniques:** CTEs, aggregate functions, `RANK()`, `PARTITION BY`
 
+![Most Popular Genre by Country](screenshots/genre_by_country.png)
+
 **Business interpretation:** Comparing purchase quantities by genre and country can help identify regional differences in music purchasing behaviour and inform further marketing analysis.
+
 
 *Note: Validate the complete query output before drawing conclusions about the most popular genre across all countries.*
 
@@ -92,6 +104,17 @@ The analysis progresses from basic SQL queries to more advanced techniques invol
 
 ```text
 Music-Store-SQL-Analysis/
+│
+├── screenshots/
+│   ├── customer_artist_spending.png
+│   ├── genre_by_country.png
+│   ├── highest_revenue_city.png
+│   ├── invoice_counts_by_country.png
+│   ├── rock_listeners.png
+│   ├── top_3_invoice_totals.png
+│   ├── top_customer_by_country.png
+│   ├── top_rock_artists.png
+│   └── top_spending_customer.png
 │
 ├── 01_basic_analysis.sql
 ├── 02_joins_and_subqueries.sql
