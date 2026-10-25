@@ -65,9 +65,30 @@ Before running the analysis queries, restore the database using the appropriate 
 
 ## Key Findings
 
-Key findings will be added after the queries have been executed and the results validated.
+### 1. Invoice Distribution by Country
+- **Finding:** The USA recorded the highest number of invoices (131), followed by Canada (76) and Brazil (61).
+- **SQL techniques:** `COUNT()`, `GROUP BY`, `ORDER BY`.
+- **Business implication:** The USA represents the largest market by invoice count in this dataset. Further analysis of revenue and customer spending could help evaluate its commercial importance.
 
-The analysis aims to identify customer spending patterns, popular music genres, leading artists, and invoice trends.
+### 2. City Generating the Highest Revenue
+- **Finding:** Prague generated the highest total invoice revenue, amounting to approximately 273.24.
+- **SQL techniques:** `SUM()`, `GROUP BY`, `ORDER BY`, `LIMIT`.
+- **Business implication:** Prague could be considered as a potential location for a promotional music event. Additional analysis of customer demand and event costs would be needed before making a final decision.
+
+### 3. Highest-Spending Customer
+- **Finding:** Customer ID 5, displayed as R Madhav, recorded the highest total invoice spending, at approximately 144.54.
+- **SQL techniques:** `JOIN`, `SUM()`, `GROUP BY`, `ORDER BY`.
+- **Business implication:** Analysing the purchasing patterns of high-spending customers could help identify opportunities for targeted promotions and customer engagement.
+
+### 4. Top Rock Artists by Track Count
+- **Finding:** Led Zeppelin ranked first with 114 Rock tracks, followed by U2 with 112 and Deep Purple with 92.
+- **SQL techniques:** Multiple-table `JOIN`s, `WHERE`, `COUNT()`, `GROUP BY`, `ORDER BY`.
+- **Business implication:** Identifying artists with extensive Rock music catalogues can support genre-specific music promotion and inventory analysis.
+
+### 5. Most Popular Music Genre by Country
+- **Finding:** Rock ranked first in six of the seven countries visible in the query results. Canada recorded 333 Rock track purchases, followed by Brazil with 205. Argentina's top-ranked genre was Alternative & Punk, with 17 purchases.
+- **SQL techniques:** Common Table Expressions (CTEs), aggregate functions, `RANK()`, `PARTITION BY`.
+- **Business implication:** Comparing genre preferences across countries can help identify regional purchasing patterns and inform targeted promotional campaigns.
 
 ## How to Run the Project
 
