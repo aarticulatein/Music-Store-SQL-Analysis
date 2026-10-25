@@ -1,104 +1,106 @@
-# Music Store SQL Analysis
-
-A SQL portfolio project analysing a digital music store database using PostgreSQL. This project explores customer spending, invoice trends, music genres, and artist catalogues through business-focused SQL queries.
+# Music Store SQL Analysis | PostgreSQL
 
 ## Project Overview
 
-The objective of this project is to use SQL to answer practical business questions about customer purchasing behaviour, invoice distribution, and music preferences across countries.
+This project explores a digital music store database using PostgreSQL to answer business questions about customers, invoices, music genres, artists, and sales.
 
-The analysis progresses from basic SQL queries to more advanced techniques involving joins, subqueries, Common Table Expressions (CTEs), and window functions.
+The goal is to demonstrate practical SQL skills by querying relational data, combining tables, aggregating results, and using advanced SQL techniques to generate business insights.
 
-## Business Questions
+## Business Objectives
 
-### 1. Basic SQL Analysis
-- Which employee is the most senior?
-- Which countries have the most invoices?
-- What are the three highest invoice totals?
-- Which billing city has the highest total invoice value?
-- Who is the highest-spending customer?
-
-### 2. Joins and Subqueries
-- Which customers have purchased Rock music?
-- Which artists have the most Rock tracks in the database?
-- Which tracks are longer than the average track duration?
-
-### 3. Advanced SQL Analysis
-- How much does each customer spend on each artist?
-- Which music genre has the highest purchase quantity in each country?
-- Who is the highest-spending customer in each billing country?
+- Analyse invoice distribution across countries.
+- Identify the city generating the highest total invoice value.
+- Find the highest-spending customer.
+- Identify artists with the most Rock tracks.
+- Determine the most purchased genre in each country.
+- Identify the highest-spending customer in each country.
+- Explore customer spending on individual artists.
+- Compare invoice totals and customer purchasing patterns.
 
 ## Tools and Technologies
 
 - **Database:** PostgreSQL
-- **SQL environment:** pgAdmin
-- **Version control:** Git and GitHub
+- **Query Tool:** pgAdmin
+- **Language:** SQL
+- **Techniques:** Filtering, aggregation, joins, subqueries, Common Table Expressions (CTEs), window functions, ranking, and sorting.
 
-## SQL Skills Demonstrated
+## SQL Concepts Demonstrated
 
-- Filtering and sorting: `WHERE`, `ORDER BY`, `LIMIT`
-- Aggregations: `SUM()`, `COUNT()`, `AVG()`
-- Grouping: `GROUP BY`, `DISTINCT`
-- Relational data analysis using `INNER JOIN` and multiple-table joins
-- Subqueries
+### Basic Analysis
+- `SELECT` and `WHERE`
+- `ORDER BY`
+- Aggregate functions such as `COUNT()` and `SUM()`
+- `GROUP BY`
+- `LIMIT`
+
+### Joins and Subqueries
+- Combining related tables using `JOIN`
+- Nested queries and subqueries
+- Aggregating customer and invoice data
+- Comparing spending across customers, artists, and countries
+
+### Advanced Analysis
 - Common Table Expressions (CTEs)
-- Window functions: `RANK()` and `PARTITION BY`
-- Customer spending and purchase quantity analysis
+- Window functions
+- `RANK()` for ranking results
+- `PARTITION BY` for country-level analysis
+- Aggregations across multiple related tables
 
 ## Key Findings
 
 ### 1. Invoice Distribution by Country
 
-**Finding:** The USA recorded the highest number of invoices (131), followed by Canada (76) and Brazil (61).
-
-**SQL techniques:** `COUNT()`, `GROUP BY`, `ORDER BY`
+The United States recorded the highest number of invoices in the analysed results, with 131 invoices. Canada followed with 76, and Brazil with 61.
 
 ![Invoice Distribution by Country](screenshots/invoice_counts_by_country.png)
 
-**Business interpretation:** Invoice counts help identify markets with high transaction volumes. Revenue and average invoice value should also be analysed before deciding which markets are commercially most important.
+### 2. City with the Highest Total Invoice Value
 
-### 2. Billing City with the Highest Invoice Value
+Prague recorded the highest total invoice value, approximately 273.24 in the dataset's currency units.
 
-**Finding:** Prague recorded the highest total invoice value, approximately 273.24 in the dataset's currency units.
-
-**SQL techniques:** `SUM()`, `GROUP BY`, `ORDER BY`, `LIMIT`
-
-![Highest Invoice Value by City](screenshots/highest_revenue_city.png)
-
-**Business interpretation:** This identifies a billing city with a high cumulative invoice value. Further analysis of customer demand, costs, and location suitability would be needed before using this result to make an event or marketing decision.
+![City with Highest Invoice Value](screenshots/highest_revenue_city.png)
 
 ### 3. Highest-Spending Customer
 
-**Finding:** Customer ID 5, displayed as R Madhav, recorded the highest total invoice spending, approximately 144.54 in the dataset's currency units.
-
-**SQL techniques:** `JOIN`, `SUM()`, `GROUP BY`, `ORDER BY`
+Customer ID 5, listed as R Madhav in the query results, had the highest total invoice spending, approximately 144.54 in the dataset's currency units.
 
 ![Highest-Spending Customer](screenshots/top_spending_customer.png)
 
-**Business interpretation:** Understanding the purchasing patterns of high-spending customers could help identify opportunities for customer engagement and targeted promotions.
+### 4. Artists with the Most Rock Tracks
 
-### 4. Artists with the Largest Rock Track Catalogues
+Led Zeppelin ranked first with 114 Rock tracks, followed by U2 with 112 and Deep Purple with 92.
 
-**Finding:** Led Zeppelin ranked first with 114 Rock tracks, followed by U2 with 112 and Deep Purple with 92.
-
-**SQL techniques:** Multiple-table `JOIN`s, `WHERE`, `COUNT()`, `GROUP BY`, `ORDER BY`
+This analysis measures the number of Rock tracks associated with each artist, rather than the number of purchases or listeners.
 
 ![Top Rock Artists](screenshots/top_rock_artists.png)
 
-**Business interpretation:** Track counts help compare the size of artists' Rock catalogues. They should not be interpreted as direct measures of sales, listening activity, or customer popularity.
+### 5. Most Purchased Genre by Country
 
+The analysis uses purchase quantities to rank genres within each country. In the results reviewed, Rock ranked first in several countries, while Alternative & Punk ranked first in Argentina with 17 purchases.
 
-### 5. Most Popular Genre by Country
+![Most Purchased Genre by Country](screenshots/genre_by_country.png)
 
-**Finding:** The country-level analysis ranks genres according to the total quantity of tracks purchased. In the reviewed results, Rock ranks first in several countries, while Alternative & Punk ranks first in Argentina with 17 purchases. Canada records 333 Rock purchases and Brazil records 205.
+### 6. Highest-Spending Customer by Country
 
-**SQL techniques:** CTEs, aggregate functions, `RANK()`, `PARTITION BY`
+The country-level analysis ranks customers according to their total spending within each country. This helps identify valuable customers across different markets.
 
-![Most Popular Genre by Country](screenshots/genre_by_country.png)
+![Highest-Spending Customer by Country](screenshots/top_customer_by_country.png)
 
-**Business interpretation:** Comparing purchase quantities by genre and country can help identify regional differences in music purchasing behaviour and inform further marketing analysis.
+## Additional Query Results
 
+The repository also includes screenshots showing additional analyses, including customer spending on artists, listeners of Rock music, and the three highest invoice totals.
 
-*Note: Validate the complete query output before drawing conclusions about the most popular genre across all countries.*
+### Customer Spending by Artist
+
+![Customer and Artist Spending](screenshots/customer_artist_spending.png)
+
+### Rock Music Listeners
+
+![Rock Listeners](screenshots/rock_listeners.png)
+
+### Top Three Invoice Totals
+
+![Top Three Invoice Totals](screenshots/top_3_invoice_totals.png)
 
 ## Project Structure
 
@@ -126,15 +128,29 @@ Music-Store-SQL-Analysis/
 ## How to Run the Project
 
 1. Install PostgreSQL and open pgAdmin.
-2. Create or restore the music store database using the provided SQL file and the appropriate method for its format.
-3. Open the relevant analysis script in pgAdmin.
-4. Execute the queries against the database.
-5. Review the query outputs and compare them with the findings documented in this README.
+2. Set up the Music Store database using the provided `Music_Store_database.sql` file.
+3. Open the SQL scripts in the repository root:
+   - `01_basic_analysis.sql`
+   - `02_joins_and_subqueries.sql`
+   - `03_advanced_analysis.sql`
+4. Execute the queries against the configured database.
+5. Review the query results and compare them with the findings and screenshots in this README.
 
-## Learning Outcomes
+**Note:** The exact database setup procedure depends on the format of `Music_Store_database.sql` and your PostgreSQL environment. If the file is a database dump, restore it using the appropriate PostgreSQL restore procedure.
 
-This project strengthened my understanding of relational databases and SQL-based analysis. It provided practical experience in joining related tables, aggregating data, writing subqueries, structuring complex queries with CTEs, and applying window functions to country-level comparisons.
+## What I Learned
 
-## Repository
+Through this project, I practised:
 
-Source code and SQL queries are available in this GitHub repository.
+- Writing SQL queries to answer business questions.
+- Analysing data across multiple related tables.
+- Aggregating and comparing customer and sales data.
+- Using joins and subqueries to combine information.
+- Applying window functions to rank results within groups.
+- Presenting query results as understandable business insights.
+
+## Conclusion
+
+This project demonstrates how SQL can be used to explore relational data and answer practical business questions about sales, customers, artists, and music preferences.
+
+It represents my ongoing development of SQL and data analytics skills, with a focus on transforming database queries into clear, business-oriented findings.
